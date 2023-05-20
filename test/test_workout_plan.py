@@ -1,6 +1,3 @@
-from copy import deepcopy
-
-
 def test_exercise(new_exercise):
     assert new_exercise.name == "New Exercise"
 
