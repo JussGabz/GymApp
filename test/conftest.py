@@ -3,48 +3,36 @@ from exercise import Exercise, WorkOutPlan
 
 @pytest.fixture
 def exercise_name():
-    return 'Exercise Name'
+    return 'New Exercise'
 
 @pytest.fixture
 def exercise_desc():
-    return 'Exercise Desc'
+    return 'New Exercise Desc'
 
 @pytest.fixture
 def exercise_body_type():
-    return 'Exercise Body Type'
+    return 'New Exercise Body Type'
 
 @pytest.fixture
-def first_exercise():
-    exercise = Exercise(
-        name='First Exercise',
-        desc='First Exercise Desc',
-        body_type='First Exercise Body Type'
-    )
-    return exercise
+def workout_plan_name():
+    return 'New Workout Plan'
 
 @pytest.fixture
-def second_exercise():
+def workout_plan_duration():
+    return '12 Weeks'
+
+@pytest.fixture
+def new_exercise(exercise_name, exercise_desc, exercise_body_type):
     return Exercise(
-        name='Second Exercise',
-        desc='Second Exercise Desc',
-        body_type='Second Exercise Body Type'
+        name= exercise_name,
+        desc= exercise_desc,
+        body_type= exercise_body_type
     )
 
 @pytest.fixture
-def new_exercise():
-    return Exercise(
-        name='New Exercise',
-        desc='New Exercise Desc',
-        body_type='New Exercise Body Type'
-    )
-
-
-
-@pytest.fixture
-def workout_plan(first_exercise, second_exercise):
+def workout_plan(workout_plan_name, workout_plan_duration):
     return WorkOutPlan(
-        name='New Work Out Plan',
-        exercises=[first_exercise, second_exercise],
-        duration='12 Weeks'
+        name= workout_plan_name,
+        duration= workout_plan_duration
     )
 
