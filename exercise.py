@@ -36,3 +36,15 @@ class WorkOutPlan:
         if exercise in self.exercises:
             self.exercises.remove(exercise)
         return self.exercises
+
+class PersonalizedWorkoutPlan(WorkOutPlan):
+    def __init__(self, name, duration, target_calories, target_weight):
+        super().__init__(name, duration)
+        self.target_calories = target_calories
+        self.target_weight = target_weight
+    
+    def get_target_calories(self):
+        return self.target_calories
+    
+    def get_target_weight(self):
+        return self.target_weight
