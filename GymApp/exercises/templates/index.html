@@ -1,7 +1,9 @@
+<h1>Excercises</h1>
+
 {% if latest_exercises %}
     <ul>
         {% for exercise in latest_exercises %}
-            <li><a href="/exercises/{{ exercise.id }}/">{{ exercise.exercise_name}}</a></li>
+            <li><a href="{% url 'exercises:exercise_detail' exercise.id %}">{{ exercise.exercise_name }}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
