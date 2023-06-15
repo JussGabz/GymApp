@@ -1,0 +1,10 @@
+{% if exercises %}
+<h1> {{ exercise_difficulty }} Exercises </h1> 
+<ul>
+    {% for exercise in exercises %}
+    <li>
+        {{ exercise.exercise_name }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

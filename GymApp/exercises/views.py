@@ -18,7 +18,13 @@ def exercise_detail(request, exercise_id):
     return render(request, "detail.html", context)
 
 def exercise_difficulty(request, difficulty):
-    response = "This is the %s exercises"
-    return HttpResponse(response % difficulty)
+    exercises = Exercise.objects.filter(difficulty__iexact=difficulty)
+    context = {
+        "exercise_difficulty": difficulty,
+        "exercises": exercises,
+    }
+
+    print(exercises)
+    return render(request, "difficulty.html", context)
 
 
