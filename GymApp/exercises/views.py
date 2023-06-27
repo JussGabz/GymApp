@@ -27,4 +27,6 @@ def exercise_difficulty(request, difficulty):
     print(exercises)
     return render(request, "difficulty.html", context)
 
+def vote(request, exercise_id):
+    return render(request, exercise_id)
 

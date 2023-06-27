@@ -3,3 +3,13 @@
 <p> Target Area: {{ exercise.target_area }} </p>
 <p> Difficulty: {{ exercise.difficulty }} </p>
 <p> Date Added: {{ exercise.date_added}} </p>
+
+<form action="{% url 'exercises:vote' exercise.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1> What is your favourite exercise? </h1></legend>
+        {% if error_message %} <p><strong>{{ error_message }}</strong></p> {% endif %}
+        {{ exercise }}
+    </fieldset>
+</form>
+
